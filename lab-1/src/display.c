@@ -27,10 +27,9 @@ extern WINDOW *win;
 void create_newwin(int height, int width)
 {
 	win = newwin(height, width, STARTY, STARTX);
-	box(win, 0, 0); /* 0, 0 gives default characters
-	 * for the vertical and horizontal
-	 * lines */
-	wrefresh(win); /* show that box */
+	box(win, 0, 0); /* Here 0,0 gives default characters
+	 * for the vertical and horizontal lines */
+	wrefresh(win); /* shows the box */
 
 	return;
 }

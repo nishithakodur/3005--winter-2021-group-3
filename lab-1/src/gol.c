@@ -21,7 +21,7 @@
  */
 cell_t env[config_NE][config_ME];
 cell_t update_env[config_NE][config_ME];
-bool reproduction_flag = false; // is high when it's mating season
+bool reproduction_flag = false;
 
 int STARTX = 0;
 int STARTY = 0;
@@ -33,8 +33,8 @@ WINDOW *win;
  */
 int main(void)
 {
-	pthread_t threadptrs[config_K * config_L]; // our thread handles
-	threadID_t threadID[config_K * config_L]; // thread ID
+	pthread_t threadptrs[config_K * config_L]; // thread handles
+	threadID_t threadID[config_K * config_L]; 
 
 	// initialize workspace
 	initEnvironment();
@@ -46,10 +46,10 @@ int main(void)
 	{
 		for (size_t j = 0; j != config_L; ++j)
 		{
-			index = i * config_L + j; // map (i,j) to an 1-d index
+			index = i * config_L + j; // mapping (i,j) to  index
 			threadID[index].row = i;
 			threadID[index].col = j;
-			// the following if condition returns 0 on the successful creation of each thread:
+			// On successful creation of thread the below if function returns 0
 			if (pthread_create(&threadptrs[index], NULL, &updateCommFunc,
 					&threadID[index]) != 0)
 			{
@@ -59,24 +59,24 @@ int main(void)
 		}
 	}
 
-	// initialize display with ncurses
+	// Initializing display
 	initDisplay();
 
 	unsigned short int ctr = 0;
 	while (1)
 	{
 		reproduction_flag = true;
-		usleep(config_TL / 2); // allow new generation to check in
+		usleep(config_TL / 2); 
 		reproduction_flag = false;
-		usleep(config_TL / 2); // put a hold on reproduction to update display
+		usleep(config_TL / 2);
 		if (++ctr == config_TDISP)
 		{
 			ctr = 0;
 			updateDisplay();
 		}
-		copyEnvironment(); // write changes to the environment, env, from update_env
+		copyEnvironment(); // writes changes to the environment and env from update_env
 	}
 
-	// should never arrive here;
+
 	return 1;
 }
