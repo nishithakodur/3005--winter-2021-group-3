@@ -9,8 +9,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "gol_config.h"
-#include "cells.h"
+#include "../inc/gol_config.h"
+#include "../inc/cells.h"
 
 /*
  * declare important variables (defined in main file as global variables)

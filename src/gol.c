@@ -12,9 +12,9 @@
 #include <pthread.h>
 #include <unistd.h>
 #include <ncurses.h>
-#include "gol_config.h"
-#include "cells.h"
-#include "display.h"
+#include "../inc/gol_config.h"
+#include "../inc/cells.h"
+#include "../inc/display.h"
 
 /*
  * global variables

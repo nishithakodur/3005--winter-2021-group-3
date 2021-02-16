@@ -6,10 +6,10 @@
  */
 
 
-#include "gol_config.h"
+#include "../inc/gol_config.h"
 #include <unistd.h>
 #include <ncurses.h>
-#include "display.h"
+#include "../inc/display.h"
 
 /*
  * important variables, defined elsewhere
