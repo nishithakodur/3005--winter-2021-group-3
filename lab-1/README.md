@@ -4,7 +4,7 @@ tar -czvf eclipse-workspace.tar.gz eclipse-workspace
 //using "sftp" transfer the code to beaglebone
 
 > sftp debian@192.168.7.2
-debian@192.168.7.2's password: 
+debian@192.168.7.2's password: pass
 Connected to 192.168.7.2.
 sftp> put eclipse-workspace.tar.gz
 Uploading eclipse-workspace.tar.gz to /home/debian/eclipse-workspace.tar.gz
