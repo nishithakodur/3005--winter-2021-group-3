@@ -14,8 +14,8 @@
 /*
  * "community of cells" (handled by one thread) parameters
  */
-#define config_NC		32 // # of cell rows in a community
-#define config_MC		16 // # of cell columns in a community
+#define config_NC		20 // # of cell rows in a community
+#define config_MC		20 // # of cell columns in a community
 
 /*
  * overall environment parameters
